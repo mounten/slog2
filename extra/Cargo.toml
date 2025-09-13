@@ -1,0 +1,9 @@
+[package]
+name = "slog2-extra"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+
+[dependencies]
+bitflags = "2.9.4"
+libc = "0.2.175"
