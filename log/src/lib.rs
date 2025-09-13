@@ -189,7 +189,7 @@ pub struct BufferConfig {
 }
 
 impl BufferConfig {
-    pub fn config_name(&mut self, name: &str) -> Result<(), std::ffi::NulError> {
+    pub fn buffer_name(&mut self, name: &str) -> Result<(), std::ffi::NulError> {
         self.buffer_name = CString::new(name)?;
         Ok(())
     }
@@ -209,7 +209,7 @@ pub struct BufferSetConfig<const S: usize = 1> {
 }
 
 impl<const S: usize> BufferSetConfig<S> {
-    pub fn set_name(&mut self, name: &str) -> Result<(), std::ffi::NulError> {
+    pub fn buffer_set_name(&mut self, name: &str) -> Result<(), std::ffi::NulError> {
         self.buffer_set_name = CString::new(name)?;
         Ok(())
     }

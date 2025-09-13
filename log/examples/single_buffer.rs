@@ -15,13 +15,13 @@ pub static __PROGNAME: LazyLock<String> = LazyLock::new(|| {
 fn main() {
     let mut buffer_config = slog2::BufferSetConfig::default();
     buffer_config
-        .set_name(&__PROGNAME)
+        .buffer_set_name(&__PROGNAME)
         .expect("could not set name");
 
     buffer_config.set_verbosity(slog2::Verbosity::Info);
 
     buffer_config
-        .config_name("default")
+        .buffer_name("default")
         .expect("could not set name");
     buffer_config.set_num_pages(7);
 

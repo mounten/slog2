@@ -26,8 +26,8 @@ Register a simple logger buffer:
 ```rust 
 // Create config
 let mut config = slog2::BufferSetConfig::default();
-config.set_name("myprogramm")?;
-config.config_name("default")?;
+config.buffer_set_name("myprogramm")?;
+config.buffer_name("default")?;
 config.set_num_pages(7);
 
 // Register and get handle.
