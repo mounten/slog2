@@ -90,7 +90,7 @@ impl<'a> PacketInfo<'a> {
     }
 }
 
-impl<'a> std::fmt::Debug for PacketInfo<'a> {
+impl std::fmt::Debug for PacketInfo<'_> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         f.debug_struct("PacketInfo")
             .field("sequence_number", &self.sequence_number())
@@ -171,12 +171,12 @@ impl<'a> BufferInfoIterator<'a> {
         BufferInfoIterator {
             num_buffers,
             current_index: 0,
-            log_file: log_file,
+            log_file,
         }
     }
 }
 
-impl<'a> Iterator for BufferInfoIterator<'a> {
+impl Iterator for BufferInfoIterator<'_> {
     type Item = Option<BufferInfo>;
 
     fn next(&mut self) -> Option<Self::Item> {
