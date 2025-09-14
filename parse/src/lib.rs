@@ -54,9 +54,7 @@ impl<'a> PacketInfo<'a> {
     }
 
     pub fn timestamp(&self) -> chrono::NaiveDateTime {
-        chrono::DateTime::from_timestamp_millis(self.timestamp_raw() as i64)
-            .unwrap_or_default()
-            .naive_local()
+        chrono::DateTime::from_timestamp_nanos(self.timestamp_raw() as i64).naive_local()
     }
 
     pub fn thread_id(&self) -> u16 {
