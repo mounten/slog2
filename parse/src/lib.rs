@@ -261,7 +261,7 @@ impl LogFile {
         if result == 0 { Ok(()) } else { Err(result) }
     }
 
-    pub(crate) fn buffer_info_iter(&self) -> Result<BufferInfoIterator, i32> {
+    pub(crate) fn buffer_info_iter(&self) -> Result<BufferInfoIterator<'_>, i32> {
         Ok(BufferInfoIterator::new(self, self.info()?.num_buffers()))
     }
 }
