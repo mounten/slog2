@@ -3,7 +3,7 @@ name = "slog2-parse"
 version = "0.1.1"
 edition = "2024"
 license = "MIT"
-description = "A crate that wraps methods defined in `libslog2parse` in an idomatic rust interface. Also exposes all unsafe c ffi functions via a `ffi` module."
+description = "A crate that wraps methods defined in `libslog2parse` in an idiomatic rust interface. Also exposes all unsafe c ffi functions via a `ffi` module."
 repository = "https://github.com/mounten/slog2"
 
 [dependencies]
