@@ -3,7 +3,7 @@ use std::env;
 use slog2_parse::{LogFile, PacketInfo};
 
 fn main() {
-    let log_file = LogFile::open(&env::args().nth(1).expect("Couldn't not get argument."))
+    let log_file = LogFile::open(&env::args().nth(1).expect("Couldn't get argument."))
         .expect("Could not open file");
 
     let log_info = log_file
