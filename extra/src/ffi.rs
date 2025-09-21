@@ -1,8 +1,11 @@
 #![allow(non_camel_case_types)]
 
 use std::ffi::c_char;
+use std::ffi::c_uint;
 
-pub const SLOG2_DUMP_LOGS_ALL: u32 = 1 << 0;
+use std::ffi::c_int;
+
+pub const SLOG2_DUMP_LOGS_ALL: c_uint = 1 << 0;
 
 #[repr(i32)]
 pub enum slog2_hash_expiry_t {
@@ -20,20 +23,20 @@ pub enum slog2_obf_t {
 
 #[link(name = "slog2-extra")]
 unsafe extern "C" {
-    pub fn slog2_dump_logs_to_file(file: *mut libc::FILE, flags: u32) -> i32;
+    pub fn slog2_dump_logs_to_file(file: *mut libc::FILE, flags: c_uint) -> c_int;
 
     pub fn slog2_hash(
         expiry: slog2_hash_expiry_t,
         input: *const c_char,
         ouput_size: usize,
         output_hash: *mut c_char,
-    ) -> i32;
+    ) -> c_int;
 
     pub fn slog2_obfuscate(
         obf_type: slog2_obf_t,
-        flags: u32,
+        flags: c_uint,
         input: *const c_char,
         size: usize,
         output: *mut c_char,
-    ) -> i32;
+    ) -> c_int;
 }
